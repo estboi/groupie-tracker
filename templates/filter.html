@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupie-tracker</title>
+    <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/rock-music-instruments/154/rock-band-drum-kit-music-512.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chathura:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/assets_filter.css">
+</head>
+<body>
+    <header id="navbar">
+            <div class="headerleft"> 
+                <a class="mainlogo" href="/" title="Home"><img src="icons/Logo.svg"></a>
+                <h1 class="mainname">GROUPIE-TRACKER</h1>
+            </div>
+        <div class="headerright"> 
+            <a class="backhome" href="/">BACK TO HOME</a>
+        </div>
+    </header> 
+    <div class="container">
+        {{if .NoMatches}}
+        <div id="result__cont">
+        <h1 id="no__results">NO RESULTS</h1>
+        </div>
+        {{end}}
+        {{range .Artists}}
+        <article class="card" style="background: url({{.Image}}) center no-repeat;">
+            <div class="card__content">
+                <h3 class="card__title">{{.Name}}</h3>
+                <p class="card__subtitle">Creation Date: {{.CreationDate}}</p>
+                <form method="POST">
+                    <button class="card__more" value="{{.Id}}" name="MoreButton">MORE...</button>
+                </form>
+            </div>
+        </article>
+        {{end}}
+    </div>
+    
+   <footer>
+    <p class="copyright">
+        <span>© By</span> 
+        <span><a href="https://01.kood.tech/git/jklimenk" target="_blank">jklimenk</a></span>
+        <span><a href="https://01.kood.tech/git/Aleksander" target="_blank">Aleksander</a></span>
+        <span><a href="https://01.kood.tech/git/eotchenk" target="_blank">eothcehnk</a></span>
+    </p>
+   </footer>
+</body>
+</html>

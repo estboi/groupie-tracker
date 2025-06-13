@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupie-tracker</title>
+    <link rel="icon"
+        href="https://cdn4.iconfinder.com/data/icons/rock-music-instruments/154/rock-band-drum-kit-music-512.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chathura:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/assets.css">
+    <script type="text/javascript" src="/functions/Main.JS"></script>
+</head>
+
+<body>
+    <header id="navbar">
+        <div class="header_left">
+            <a class="header_left__mainlogo" href="/" title="Home"><img src="icons/Logo.svg"></a>
+            <h1 class="header_left__mainname">GROUPIE-TRACKER</h1>
+        </div>
+        <div class="header_right">
+            <div class="header_right__search">
+                <form id="formsearch" method="post">
+                    <input list="searchtype" class="header_right__search_input" placeholder="Enter your search..."
+                        id="Searchinput" name="Search"  style="color: white;font-weight: 500;">
+                    <datalist id="searchtype">
+                        {{range $key,$value := .SearchList}}
+                        {{range $value}}
+                        <option>
+                            <h1>{{.}} : </h1>
+                            <p>{{$key}}</p>
+                        </option>
+                        {{end}}
+                        {{end}}
+                    </datalist>
+                    <button type="submit" class="header_right__search_submit"
+                        style="background-image: url(icons/searchicon.svg);" name="SearchButton"
+                        value="SearchSubmit"></button>
+                </form>
+            </div>
+            <div class="header_right__filterbutton">
+                <div style="cursor:pointer" onclick="openNav()"><img src="icons/Filtericon.svg" /></div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        {{range .Artists}}
+        <article class="card" style="background: url({{.Image}}) center no-repeat;">
+            <div class="card__content">
+                <h3 class="card__title">{{.Name}}</h3>
+                <p class="card__subtitle">Creation Date: {{.CreationDate}}</p>
+                <form method="POST">
+                    <button class="card__more" value="{{.Id}}" name="MoreButton">MORE...</button>
+                </form>
+            </div>
+        </article>
+        {{end}}
+    </div>
+    <footer>
+        <p class="footer__copyright">
+            <span>© By</span>
+            <span><a class="footer__copyright_links" href="https://01.kood.tech/git/jklimenk"
+                    target="_blank">jklimenk</a></span>
+            <span><a class="footer__copyright_links" href="https://01.kood.tech/git/Aleksander"
+                    target="_blank">Aleksander</a></span>
+            <span><a class="footer__copyright_links" href="https://01.kood.tech/git/eotchenk"
+                    target="_blank">eothcehnk</a></span>
+        </p>
+    </footer>
+    <div id="mySidenav" class="FilterSideNav">
+        <div class="sort">
+            <span class="FilterSideNav_header">
+                <h1 class="sidenav_h1">SORT BY</h1>
+                <a href="javascript:void(0)" class="FilterSideNav__CloseBtn" onclick="closeNav()">&times;</a>
+            </span>
+            <div class="sort__options_div">
+                <form method="POST">
+                    <button class="sort__options" value="AZ" name="Name_Normal">A > Z</button>
+                </form>
+                <form method="POST">
+                    <button class="sort__options" value="OldNew" name="Date_Normal">Old > New</button>
+                </form>
+            </div>
+            <div class="sort__options_div">
+                <form method="POST">
+                    <button class="sort__options" value="ZA" name="Name_Reverse">Z > A</button>
+                </form>
+                <form method="POST">
+                    <button class="sort__options" value="NewOld" name="Date_Reverse">New > Old</button>
+                </form>
+            </div>
+        </div>
+        <div class="filter_div">
+            <h1 class="sidenav_h1">FILTER</h1>
+            <form method="post">
+                <div class="membersnumber">
+                    <h2 id="sidenav__member" class="sidenav_h2">Members number</h2>
+
+                    <div class="checkboxes">
+                        <label class="Checkbox">1
+                            <input type="checkbox" name="checkbox" value="1">
+                            <span class="checkmark"></span></label>
+                        <label class="Checkbox">2
+                            <input type="checkbox" name="checkbox" value="2">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="Checkbox">3
+                            <input type="checkbox" name="checkbox" value="3">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="Checkbox">4
+                            <input type="checkbox" name="checkbox" value="4">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="Checkbox">5
+                            <input type="checkbox" name="checkbox" value="5">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="Checkbox">6
+                            <input type="checkbox" name="checkbox" value="6">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="Checkbox">7
+                            <input type="checkbox" name="checkbox" value="7">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="Checkbox">8
+                            <input type="checkbox" name="checkbox" value="8">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="date">
+                    <h2 class="sidenav_h2">Creation date</h2>
+                    <span class="rangeValues">
+                        <input class="DateInput" type="number" max="2023" min="1940" id="inputNumber1" value="1940"
+                            readonly>
+                        <p> &mdash;</p>
+                        <input class="DateInput" type="number" max="2023" min="1940" id="inputNumber2" value="2023"
+                            readonly>
+                    </span>
+                    <section class="range-slider">
+                        <p>FROM</p><input name="FromYearCreation" value="1940" min="1940" max="2023" step="1"
+                            id="rangeNumber1" type="range" oninput="UpdateInput1(this.value);">
+                        <p>TO</p><input name="ToYearCreation" value="2023" min="1940" max="2023" step="1" type="range"
+                            id="rangeNumber2" oninput="UpdateInput2(this.value);">
+                    </section>
+                </div>
+                <div class="date">
+                    <h2 class="sidenav_h2">First album</h2>
+                    <span class="rangeValues">
+                        <input class="DateInput" type="number" max="2023" min="1940" id="inputNumber3" value="1940"
+                            readonly>
+                        <p> &mdash;</p>
+                        <input class="DateInput" type="number" max="2023" min="1940" id="inputNumber4" value="2023"
+                            readonly>
+                    </span>
+                    <section class="range-slider">
+                        <p>FROM</p><input name="FromAlbumDate" value="1940" min="1940" max="2023" step="1" type="range"
+                            id="rangeNumber3" oninput="UpdateInput3(this.value);">
+                        <p>TO</p><input name="ToAlbumdate" value="2023" min="1940" max="2023" step="1" type="range"
+                            id="rangeNumber4" oninput="UpdateInput4(this.value);">
+                    </section>
+                </div>
+                <div class="locations">
+                    <h2 class="sidenav_h2">Concert Locations</h2>
+                    <div class="location">
+                        <input placeholder="Country" list="filtertype" class="selector-location" name="Locations">
+                        <datalist id="filtertype">
+                            {{range .FilterLocations}}
+                            <option>{{.}}</option>
+                            {{end}}
+                        </datalist>
+                    </div>
+                </div>
+                <div class="SubmitDiv" style="display: flex;justify-content: center;">
+                    <input name="Submit" class="Submit" type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

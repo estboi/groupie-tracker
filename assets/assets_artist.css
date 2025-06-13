@@ -1,0 +1,277 @@
+  /* Header and footer */
+  body {
+     margin: 0;
+     font-family: 'Chathura', sans-serif;
+  }
+
+  header {
+     position: absolute;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+     height: 104px;
+     top: 0px;
+     background: #016660;
+  }
+
+  footer {
+     position: absolute;
+     width: 100%;
+     height: 65px;
+     background: #016660;
+     text-align: center;
+     color: white;
+     font-size: 30px;
+     flex: 0 0 auto;
+  }
+
+  p a {
+     text-decoration: none;
+     color: white;
+  }
+
+  p a:hover {
+     cursor: pointer;
+     text-decoration-line: underline;
+     text-decoration-thickness: 1px;
+  }
+
+  .copyright {
+     margin: 0;
+     padding-top: 8px;
+  }
+
+  .mainlogo {
+     width: 63px;
+     height: 63px;
+     margin: 100px 25px;
+  }
+
+  .mainname {
+     color: white;
+     font-size: 80px;
+     letter-spacing: 3px;
+     padding-top: 15px;
+  }
+
+  .headerleft {
+     display: flex;
+     justify-content: flex-end;
+  }
+
+  /* container */
+  .container {
+     display: flex;
+     padding-top: 104px;
+     margin: 0;
+     font-family: 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  }
+
+  /* Img,name,creationdate,firstalbum */
+  .Main {
+     background-color: #01665f62;
+     padding: 50px 100px 30px 100px;
+  }
+
+  .main-h1 {
+     text-shadow: 2px 2px 5px gray;
+     display: flex;
+     padding: 5px;
+     background-color: #01665f62;
+     color: #ffffff;
+     border-radius: 10px 10px 10px 10px;
+  }
+
+  #Locations {
+     font-size: 20pt;
+  }
+
+  .Main p {
+     font-size: 1.5em;
+     margin: 30px 0;
+  }
+
+  .Main img {
+     border-radius: 5%;
+     height: 280px;
+  }
+
+  /* Container for members and concerts */
+  .Members-Concerts-area {
+     margin: 20px auto;
+     width: 90%;
+     padding: 0 40px;
+  }
+
+  .Members-Concerts-cards {
+     display: flex;
+     height: fit-content;
+     flex-direction: column;
+     border-bottom-style: solid;
+     border-bottom-width: 2px;
+  }
+
+  .Members-Concerts-cards h1 {
+     font-size: 2em;
+     color: #000000;
+     border-radius: 10px 10px 10px 10px;
+  }
+
+  .Members-Concerts-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     font-size: 18pt;
+     grid-column-gap: 15px;
+  }
+
+  .Members-Concerts-elements {
+     display: flex;
+     flex-direction: column;
+  }
+
+  .Back-btn {
+     color: #ffffff;
+     background-color: #016660;
+     cursor: pointer;
+     font-family: 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+     margin: 40px 5px;
+     padding: 8px 30px;
+     border-radius: 20px;
+     border-style: none;
+  }
+
+  /* For the map page */
+  .Mapbutton div {
+     display: flex;
+     align-items: center;
+     margin-left: 10px;
+     border-radius: 20%;
+     height: 120px;
+     width: 120px;
+     cursor: pointer;
+  }
+
+  .Mapbutton object {
+     height: 100px;
+     margin: auto;
+     z-index: -1;
+  }
+
+  .Mapbutton div:hover {
+     box-shadow: 0px 0px 20px #036464;
+  }
+
+  .MapOverlay {
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 0;
+     position: fixed;
+     z-index: 1;
+     top: 0;
+     left: 0;
+     background-color: rgba(0, 0, 0, 0.91);
+     overflow-x: hidden;
+     transition: 0.5s;
+     text-align: center;
+  }
+
+  .MapOverlay a:hover,
+  .MapOverlay a:focus {
+     color: #018f41;
+  }
+
+  .MapOverlay .closebtn {
+     position: absolute;
+     right: 45px;
+     font-size: 100px;
+     padding-top: 0;
+  }
+
+  .MapOverlay a {
+     padding: 8px;
+     text-decoration: none;
+     color: white;
+     display: block;
+     transition: 0.3s;
+  }
+
+  .MapOverlay p {
+     font-size: 100px;
+     color: white;
+     margin: 0;
+  }
+
+  #map {
+     height: 60%;
+     width: 60%;
+  }
+
+  /* adaptive */
+
+  @media screen and (max-width: 1200px) {
+     .Main {
+        padding: 50px 50px 30px 50px;
+     }
+  }
+
+  @media screen and (max-width: 900px) {
+     .Main {
+        padding: 40px;
+     }
+
+     .Main img {
+        height: 200px;
+     }
+
+     .main-h1 {
+        font-size: 16pt;
+     }
+
+     #Locations {
+        font-size: 14pt;
+     }
+
+     .Main p {
+        font-size: 14pt;
+     }
+
+     .Members-Concerts-cards h1 {
+        font-size: 16pt;
+     }
+
+     .Members-Concerts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 14pt;
+     }
+  }
+
+  @media screen and (max-width: 650px) {
+     .mainname {
+        width: 0;
+        overflow: hidden;
+     }
+
+     .Mapbutton object {
+        height: 80px;
+     }
+
+     .Members-Concerts-grid {
+        grid-template-columns: repeat(1, 1fr);
+        font-size: 14pt;
+     }
+  }
+
+  @media screen and (max-width: 450px) {
+     .container {
+        flex-direction: column;
+        width: 100%;
+     }
+
+     .Members-Concerts-area {
+        padding: 0;
+     }
+  }

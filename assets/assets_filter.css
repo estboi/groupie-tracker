@@ -1,0 +1,198 @@
+     body{
+         margin: 0;
+         position: absolute;
+         top: 0;
+         background-color: #0166600D;
+         font-family: 'Chathura', sans-serif;
+         min-height: 100vh;
+         width: 100%;
+    }
+    header{
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between ;
+        align-items: center;
+        width: 100%;
+        height: 104px;
+        top: 0;
+        background: #016660;
+        transition: top 0.3s;
+        z-index: 1;
+    }
+    footer{
+        position: relative;
+        width: 100%;
+        height: 66px;
+        bottom: 0;
+        background: #016660;
+        text-align: center;
+        color:white;
+        font-size: 30px;
+        flex: 0 0 auto;
+    }
+    #result__cont{
+        min-height: calc(100vh - 270px);
+    }
+    p a{
+        text-decoration: none;
+        color: white;
+    }
+    p a:hover{
+        cursor: pointer;
+        text-decoration-line: underline;
+        text-decoration-thickness: 1px;
+    }
+    .copyright{
+        margin: 0;
+        padding-top: 8px;
+    }
+    .container{
+        position: relative;
+        display: grid;
+        justify-items: center;
+        justify-content: space-evenly;
+        grid-template-columns: repeat(5,1fr);
+        padding-top: 104px;
+        width: 80%;
+        margin: 50px auto;
+        grid-gap: 40px;
+        flex: 1 0 auto;
+        min-height: calc(100vh - 270px);
+    }
+    .card{
+        position: relative;
+        width: 240px;
+        height: 240px;
+        color: #a18a96;
+        background-size: cover;
+        border-radius: 10px;
+        overflow: hidden;
+        font-family:'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    }
+    .card__content{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 210px;
+        height: 120px;
+        padding: 5px 15px 10px 15px;
+        background-color: #598f82dc;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        transform: translateY(70px);
+        transition: transform .25s;
+    }
+    .card__title{
+        color: white;
+        line-height: 13px;
+    }
+    .card__subtitle{
+        color: #ffffff;
+        display: block;
+        font-size: 14px;
+        margin-bottom: 10px;
+        opacity: 0;
+        transition: opacity .3s;
+    }
+    .card__more{
+        color:#016660;
+        background-color: #ffffff;
+        cursor: pointer;
+        text-decoration-line: underline;
+        font-family:'Gill Sans MT', 'Trebuchet MS', sans-serif;
+        margin: 5px 0 0 -2px;
+        font-size: 10pt;
+        opacity: 0;
+        padding: 4px 10px;
+        border-radius: 20px;
+        transition: opacity .3s;
+        border-style: none;
+    }
+    .card:hover .card__content{
+        transform:  translateY(0);
+    }
+    .card:hover .card__more{
+        opacity: 1;
+        transition-delay: .3s;
+    }
+    .card:hover .card__subtitle{
+        opacity: 1;
+        transition-delay: .3s;
+    }
+    .headerleft{
+        display: flex;
+    }
+    .mainlogo{
+        width: 63px;
+        height: 63px;
+        margin: 100px 25px;
+    }
+    .mainname{
+        color:white;
+        font-size: 80px;
+        letter-spacing: 3px;
+        padding-top: 15px;
+    }
+    .headerright{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .backhome {
+        text-decoration: none;
+        color:white;
+        font-size: 80px;
+        letter-spacing: 3px;
+        margin-right: 50px;
+    }
+    #no__results{
+        font-size: 70pt;
+        text-align: center;
+    }
+    #result__cont{
+        grid-column: 3;
+        width: 80vw;
+    }
+    @media screen and (max-width: 1450px) {
+        .container{
+        grid-template-columns: repeat(4,1fr);
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        .container{
+        grid-template-columns: repeat(3,1fr);
+        }
+      }
+      @media screen and (max-width: 900px) {
+        .container{
+        grid-template-columns: repeat(2,1fr);
+        }
+        .sorting{
+            font-size: 12pt;
+        }
+        .sidenav_h1{
+            font-size: 40px;
+        }
+        .sidenav_h2{
+            font-size: 30px;
+        }
+        .Checkbox{
+            font-size: 30px;
+        }
+        .rangeValues input{
+            font-size: 1rem;
+        }
+      }
+      @media screen and (max-width: 650px) {
+       .mainname{
+        width: 0;
+        overflow: hidden;
+       }
+       .mainlogo{
+        margin: 200px 25px;
+       }
+        .container{
+        grid-template-columns: repeat(1,1fr);
+        }
+      }
